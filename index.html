@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Functional JS</title>
+    <link rel="stylesheet" href="/assets/lib/bootstrap5/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/app.css">
+</head>
+
+<body>
+    <!-- <input type="text" id="txt" />
+    <button id="butt">Capitalize</button> -->
+
+    <p>
+    <h4 class="page-header">Functional JS – Udemy</h4>
+    </p>
+    <p>
+    <h5 class="page-header">Software_Dev\00303_WebFront_JS_jQuery_Bootstrap\Functional_Programming_For_JS_Developers\
+    </h5>
+    </p>
+
+    <!-- PRUEBA ACCORDION 5 -->
+
+    <!-- <div class="accordion accordion-flush" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingExampleOne">
+                <button class="btn btn-primary accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExampleOne" aria-expanded="false" aria-controls="collapseExampleOne">
+                    MODULE 1 - GENERAL ASPECTS
+                </button>
+            </h2>
+            <div id="collapseExampleOne" class="accordion-collapse collapse" aria-labelledby="headingExampleOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    bopdy
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingExampleTwo">
+                <button class="btn btn-primary accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExampleTwo" aria-expanded="false" aria-controls="collapseExampleTwo">
+                    MODULE 1 - GENERAL ASPECTS
+                </button>
+            </h2>
+            <div id="collapseExampleTwo" class="accordion-collapse collapse" aria-labelledby="headingExampleTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    bopdy
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="accordion accordion-flush" id="accordionExampleMain">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="btn btn-primary accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    MODULE 1 - GENERAL ASPECTS
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExampleMain">
+                <div class="accordion-body">
+                    <div class="accordion accordion-flush" id="accordionExampleSub1">
+                        <ol>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingOneOne">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOneOne" aria-expanded="false"
+                                        aria-controls="collapseOneOne">
+                                        VERSATILITY:
+                                    </button>
+                                </h2>
+                                <div id="collapseOneOne" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOneOne" data-bs-parent="#accordionExampleSub1">
+                                    <div class="accordion-body">
+
+                                        <p>
+                                            JS is a very versatile language, can be used in a:
+                                        <ul>
+                                            <li>
+                                                Imperative style
+                                            </li>
+                                            <li>
+                                                OO style
+                                            </li>
+                                            <li>
+                                                Functional style
+                                            </li>
+
+                                        </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingOneTwo">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOneTwo" aria-expanded="false"
+                                        aria-controls="collapseOneTwo">
+                                        ASPECTS OF IMPERATIVE PROGRAAMING TO FIX BY FUNCTIONAL PROGRAMMING
+                                    </button>
+                                </h2>
+                                <div id="collapseOneTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOneTwo" data-bs-parent="#accordionExampleSub1">
+                                    <div class="accordion-body">
+
+                                        <ol>
+                                            <li>
+                                                We were defining global vars, outside the functions where they are
+                                                assignbed
+                                                their values.
+                                            </li>
+                                            <li>
+                                                We use independent funcitons
+                                            </li>
+                                            <li>
+                                                We pass values from one to other function, and they are redefined.
+                                            </li>
+                                            <li>
+                                                Native JS and DOM methods mmixed together.
+                                            </li>
+                                            <li>
+                                                Unclear what is happening outside of the script that may affect at the
+                                                values we
+                                                are worling
+                                                with, ror itf other functions may be relaying on those values.
+                                            </li>
+                                            <li>
+                                                May be the function names are repeated in other loaded scripts.
+                                            </li>
+                                            <li>
+                                                Brilttle code, that won’t worl in a different context (for example, if
+                                                we
+                                                don’t
+                                                define those
+                                                global vars first).
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li lass="accordion-item">
+                                <h2 class="accordion-header" id="headingOneThree">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOneThree"
+                                        aria-expanded="false" aria-controls="collapseOneThree">
+                                        OBJECT-ORIENTED JS
+                                    </button>
+                                </h2>
+                                <div id="collapseOneThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOneThree" data-bs-parent="#accordionExampleSub1">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>
+                                                It’s good to switch to OO, specially in some env where different people
+                                                are
+                                                sending scripts
+                                                to
+                                                be loadad in the browser.
+                                            </li>
+                                        </ul>
+                                        <ol>
+                                            <li>
+                                                ADVANTAGES
+                                                <ol>
+                                                    <li>
+                                                        Allows data to be treated as object to be passed around the
+                                                        code.
+                                                    </li>
+                                                    <li>
+                                                        Objects have methods for manipulating them, and also their
+                                                        instances.
+                                                    </li>
+                                                    <li>
+                                                        Messages can be passed artound to one object to another.
+                                                    </li>
+                                                    <li>
+                                                        Props of objects can either be hidden or shared allowing
+                                                        encapsulation >
+                                                        security.
+                                                        One
+                                                        function
+                                                        doesn’t
+                                                        interfere with another.
+                                                    </li>
+                                                    <li>
+                                                        Allows to build up functionality of objects by adding to the
+                                                        abilities
+                                                        of an object
+                                                        to
+                                                        Composition.
+                                                    </li>
+                                                    <li>
+                                                        Inheritance: enhancing ..
+                                                    </li>
+                                                    <li>
+                                                        Work with objects takes advantage of encapsulation, inheritance:
+                                                        <ul>
+                                                            <li>
+                                                                Use, for a defined object, its property .prototpype.
+                                                                …(), in
+                                                                order that when
+                                                                I have
+                                                                several
+                                                                instances of that
+                                                                object I am just using 1 instance of the prototype in
+                                                                memory.
+                                                                <ul>
+                                                                    <li>
+                                                                        <p>Example: Object SomeText,
+                                                                        </p>
+                                                                        <p>
+                                                                            // COnstructor<br />
+                                                                            var SomeText = function(textToHandle)
+                                                                            {<br />
+                                                                            this.text = textToHandle;<br />
+                                                                            }
+                                                                        </p>
+                                                                        <p>
+                                                                            with two methods:
+                                                                        </p>
+                                                                        <ul>
+                                                                            <li>
+                                                                                .prototpype.capitalize(param)
+                                                                            </li>
+                                                                            <li>
+                                                                                .prototpype.capitalizeWods()
+                                                                            </li>
+                                                                        </ul>
+                                                                        The first defines the code just for 1 word, The
+                                                                        second
+                                                                        is in charge
+                                                                        of
+                                                                        iteration of
+                                                                        calls to the first one.
+                                                                    </li>
+                                                                </ul>
+                                                                <img class="img-code" src="assets/img/1.PNG">
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ol>
+                                                TIPS:
+                                                <ul>
+                                                    <li>
+                                                        Use “use strict” in a limited scope, for example, in a function
+                                                        or
+                                                        inside the
+                                                        definition of
+                                                        an object, since there can be other code not written for this
+                                                        convention, and it can
+                                                        break
+                                                        it.
+                                                    </li>
+                                                    <li>
+                                                        Use addEventListener is more versatile than onclick because it
+                                                        can
+                                                        be
+                                                        use for
+                                                        different
+                                                        types of events.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                DISADVANTAGES
+                                                <ol>
+                                                    <li>
+                                                        Methods are taken from prototype, and use properties of the
+                                                        object
+                                                        set
+                                                        with a very
+                                                        simple
+                                                        constructor, which
+                                                        hardens to keep track of what is happening in the code.
+                                                    </li>
+                                                    <li>
+                                                        There are a couple of reasons why looping can be messy:
+                                                        <ul>
+                                                            <li>
+                                                                Loop like this, relies on having an extra var, counter.
+                                                                It
+                                                                is
+                                                                good to avoid
+                                                                creating
+                                                                extra state you will
+                                                                need to track: avoid creating extra variables.
+                                                            </li>
+                                                            <li>
+                                                                The loop is changing vars outside itself, which
+                                                                dificults to
+                                                                know what the
+                                                                code is
+                                                                doing.
+
+                                                            </li>
+                                                            <li>
+                                                                Using of the ‘new’ keyword can create hidden and silent
+                                                                errors.
+                                                            </li>
+                                                            <li>
+                                                                The code is still brittle, not portable: it relies on
+                                                                prototype
+                                                                in multiple
+                                                                places,
+                                                                and JS is more complex.
+                                                                Also the front and back end requirements … []. Also for
+                                                                testing,
+                                                                it is
+                                                                improvable.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingOneFour">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOneFour"
+                                        aria-expanded="false" aria-controls="collapseOneFour">
+                                        FUNCTIONAL STYLE
+                                    </button>
+                                </h2>
+                                <div id="collapseOneFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOneFour" data-bs-parent="#accordionExampleSub1">
+                                    <div class="accordion-body">
+
+
+
+                                        <p>
+                                            No one is best, it depends on the case.
+                                        </p>
+                                        <p>
+                                            Functional style:
+                                        <ol>
+                                            <li>
+                                                takes advantage of the fact that JS allows you to use functions as
+                                                1st-class
+                                                objects: use
+                                                them as
+                                                arguments
+                                                and pass them between functions.
+                                            </li>
+                                            <li>
+                                                Encourages to not to make changes to values that are outside of the
+                                                function, or
+                                                change the
+                                                state of
+                                                app
+                                                while executing the function
+                                            </li>
+
+                                            <li>Functions are independent, and reusable, No reliance on abstract object
+                                                passed
+                                                around: we
+                                                have the vars, passed through. No outside objects that affects to the
+                                                result
+                                                inside of the
+                                                functions.</li>
+                                            <li>We know input and its associated output, regardless of the context. Much
+                                                easier
+                                                to unit
+                                                test, then.</li>
+                                            <li>Code is much more concise. </li>
+                                            <li>Ideally, in the function you are going to describe the problem or
+                                                solution,
+                                                not
+                                                the
+                                                step-by-step;
+                                                which is a
+                                                little bit complex.
+                                            </li>
+
+                                        </ol>
+
+                                        </p>
+                                        <p>
+                                            EXAMPLE:
+                                        </p>
+                                        <img class="img-code" src="assets/img/2.PNG">
+
+                                        <p>
+                                            COMMENTS:
+                                        </p>
+                                        <ol>
+                                            <li>
+                                                Code is much more concise.
+                                            </li>
+                                            <li>
+                                                Fuinctions are independent and reusable.
+                                            </li>
+                                            <li>
+                                                No reliance on abstract object passed around: we have the vars, passed
+                                                through.
+                                                No outside
+                                                objects
+                                                that
+                                                affects to the result inside of the functions.
+                                            </li>
+                                            <li>
+                                                Much easier to unit test: we know input and its associated output, then.
+                                                Regardless of the
+                                                context.
+                                            </li>
+                                            <li>
+                                                We pass a fn to processWords(), and inside processWords() the arg fn IS
+                                                NOT
+                                                CALLED AS A
+                                                CALLBACK BUT
+                                                AS A
+                                                PREDICATE FN, INSIDE AN ARROW METHOD AS .map(). There are some JS
+                                                features
+                                                and
+                                                methods we
+                                                saw at the
+                                                beginning
+                                                of the course, they are useful for functional programming, and this is
+                                                one
+                                                of
+                                                them perhaps:
+                                                it
+                                                doesn’t LOOP, or
+                                                passes an array as a final argument of the caller function through a
+                                                “callback”
+                                                call, but
+                                                instead
+                                                makes an
+                                                iteration from a “group” method as map(); which is much more efficient.
+                                                Map()
+                                                also allows
+                                                not
+                                                relying on
+                                                extra-variables as in a loop.
+                                            </li>
+                                        </ol>
+
+                                        <p>EXAMPLE with ES2015 syntax: </p>
+                                        <img class="img-code" src="assets/img/3.PNG">
+
+                                        <p>COMMENTS:</p>
+                                        <ol>
+                                            <li>
+                                                The code is concise. 4 lines of code
+                                            </li>
+                                            <li>
+                                                No mutable variables. Not used the keyword var or let; defined as const,
+                                                which
+                                                prevent
+                                                changes and worries about it.
+                                                <br /> One quirk: the handler fn for the event listener has had to be
+                                                declared
+                                                with let:
+                                                with const the event could't find it.
+                                            </li>
+                                            <li>
+                                                we define the funcitons with implicit return values: we don't have to
+                                                use
+                                                the
+                                                return
+                                                keyword.
+                                            </li>
+                                            <li>
+                                                The block syntax allosw being inmediately invoked.
+                                            </li>
+                                            <li>
+                                                Still using "use strict": since we are writing code in a modular way we
+                                                can
+                                                limit the efect
+                                                of that to that module
+                                            </li>
+                                            <li>
+                                                The code is Dense: few lines but condensed, if not familiarized with all
+                                                these
+                                                sintax
+                                            </li>
+                                            <li>
+                                                Anonymous Arrow functions harder to debug.
+                                            </li>
+                                            <li>
+                                                May not be clear as self.documenting: mot "self-definer", as it is not
+                                                so
+                                                clear
+                                                to
+                                                understand.
+                                            </li>
+                                            <li>
+                                                Not consistent with old syntax. I.e., this ES2015 syntax (which is this
+                                                video
+                                                code), not
+                                                always compatible with ES5 . You may prefer one or the other to be
+                                                prevalent.
+                                            </li>
+                                        </ol>
+
+                                        <h4>SUM UP</h4>
+                                        <ol>
+                                            <li>
+                                                IMPERATIVE CODE is easy to follow to top to bottom and see what's
+                                                happening.
+                                            </li>
+                                            <li>
+                                                OO CODE makes sense when you think in terms of objects and how they can
+                                                pass
+                                                around data.
+                                            </li>
+                                            <li>
+                                                FUNCTIONAL CODE is self-documenting and very concise.
+                                            </li>
+                                            <li>
+                                                FUNCTIONAL CODE with with ES2015 syntax is not so self-documenting but
+                                                the
+                                                most
+                                                concise and
+                                                clean.
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="accordionExampleSub_1_5" class="accordion-item">
+                                <h2 class="accordion-header" id="headingOneFive">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOneFive"
+                                        aria-expanded="false" aria-controls="collapseOneFive">
+                                        PURE FUNCTIONS:
+                                    </button>
+                                </h2>
+                                <div id="collapseOneFive" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOneFive" data-bs-parent="#accordionExampleSub1">
+                                    <div class="accordion-body">
+                                        we can use them as a JS code improvement, regardless of using Functiona
+                                        programming
+                                        or not.
+                                        <ol>
+                                            <li>
+                                                Don't rely on the state of the code they are called from.
+                                            </li>
+                                            <li>
+                                                Don't create side effects that alter variables outside themselves.
+                                            </li>
+                                            <li>
+                                                Only one result possible for a given set or args.
+                                            </li>
+                                        </ol>
+                                        <p>
+                                        <h3>This means that:</h3>
+                                        </p>
+                                        <ol>
+                                            <li>
+                                                Pure functions can be called in parallel without altering results.
+                                            </li>
+                                            <li>
+                                                Allow for memorization: it allows to store the valoue returned by the
+                                                function for
+                                                any given input. If it's called again it finds out if that vcalue has
+                                                been already
+                                                calculated and then returns it without going to the process.
+                                            </li>
+                                            <li>
+                                                POtential for lazy evaluation: in certain circunstances they may not
+                                                execute the
+                                                processs if it is not going to have effect on the external state.
+                                            </li>
+                                        </ol>
+                                        <p>
+                                            const in ES2015 doesn't prevent of changing that value by push() to an array
+                                            or objet,
+                                            or
+                                            modifying content to array or object from an impure function. See ex. of
+                                            impure function
+                                            at
+                                            04:00 of 4_Pure_Functions.mp4
+                                        </p>
+                                        <p>
+                                            TO BE CAREFUL WITH PURE FUNCTION: in JS context, you may think you are
+                                            passing always
+                                            the same
+                                            value to a pure function, and it is not being so (it those values are passwd
+                                            as vars and
+                                            we
+                                            can't see that those var values have changed). See ex. at 06:00 of
+                                            4_Pure_Functions.mp4
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="accordionExampleSub_1_6" class="accordion-item">
+                                <h2 class="accordion-header" id="headingOneSix">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOneSix" aria-expanded="false"
+                                        aria-controls="collapseOneSix">
+                                        HIGHER ORDER FUNCTIONS:
+                                    </button>
+                                </h2>
+                                <div id="collapseOneSix" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOneSix" data-bs-parent="#accordionExampleSub1">
+                                    <div class="accordion-body">
+                                        <p>In JS, the type of a fn is the same than of an object; thus,
+                                        <ol>
+                                            <li>
+                                                a function can be assigned a value,
+                                            </li>
+                                            <li>
+                                                a function can also be passed as fn arg
+                                            </li>
+                                            <li>
+                                                a function can return another function as return value
+                                            </li>
+                                        </ol>
+                                        </p>
+                                        <p>
+                                            This takes us to WHAT'S a HIGHER ORDRE FUNCTION:
+                                        <ol>
+                                            <li>
+                                                It takes a function as an arg
+                                            </li>
+                                            <li>
+                                                It returns a function as a result
+                                            </li>
+                                            <li>
+                                                It both accepts a function as argument and returns a function as result
+                                            </li>
+                                        </ol>
+                                        </p>
+                                        <p>
+                                            EXAMPLE of a function that returns another fn:
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/4.PNG">
+                                        </p>
+                                        This code repeats twice. Fot avoiding this, we can make a unique function that
+                                        returns a
+                                        function,
+                                        customized as we need for the case:
+                                        <p>
+                                            <img class="img-code" src="assets/img/5.PNG">
+                                        </p>
+                            </li>
+                            <li id="accordionExampleSub_1_7" class="accordion-item">
+                                <h2 class="accordion-header" id="headingOneSeven">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOneSeven"
+                                        aria-expanded="false" aria-controls="collapseOneSeven">
+                                        PROS OF PURE HIGHER ORDER FUNCTIONS
+                                    </button>
+                                </h2>
+                                <div id="collapseOneSeven" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOneSeven" data-bs-parent="#accordionExampleSub1">
+                                    <div class="accordion-body">
+
+                                        <ul>
+                                            <li>
+                                                The way we provide callbacks, which we can always rely on
+                                            </li>
+                                            <li>
+                                                Better encapsulation of methods
+                                            </li>
+                                            <li>
+                                                <h2>Easier to combine functions for more complex funcitonality</h2>
+                                            </li>
+                                            <li>
+                                                <h2>Versatile for creatinn of sets of related functions</h2>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="btn btn-primary accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    MODULE 2 - RECURSION
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExampleMain">
+                <div class="accordion-body">
+                    <div class="accordion accordion-flush" id="accordionExampleSub2">
+                        <ol>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingThreeOne">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThreeOne"
+                                        aria-expanded="false" aria-controls="collapseThreeOne">
+                                        CONCEPT:
+                                    </button>
+                                </h2>
+                                <div id="collapseThreeOne" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThreeOne" data-bs-parent="#accordionExampleSub2">
+                                    <div class="accordion-body">
+
+                                        Recursion is a function that calls itself, from within. Because of that, the
+                                        function is a
+                                        HIGHER
+                                        ORDER function (CJP: because the way the function calls itself is 'return
+                                        call()', as seen
+                                        in the
+                                        next video; that means, the funciton returns another function).
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingThreeTwo">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThreeTwo"
+                                        aria-expanded="false" aria-controls="collapseThreeTwo">
+                                        TRADITIONAL LOOPS:
+                                    </button>
+                                </h2>
+                                <div id="collapseThreeTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThreeTwo" data-bs-parent="#accordionExampleSub2">
+                                    <div class="accordion-body">
+
+                                        <ol>
+                                            <li>
+                                                <p>
+                                                <h5>For loop:</h5>
+                                                </p>
+                                                <p>
+                                                    <img class="img-code" src="assets/img/6.PNG">
+                                                </p>
+                                                <p>We have some issues:
+                                                <ul>
+                                                    <li>
+                                                        Lots of local state created: var result is changing in each lap.
+                                                    </li>
+                                                    <li>
+                                                        State is created and destroyed along the way: var counter, which
+                                                        after the
+                                                        loop is
+                                                        destroyed
+                                                        and we don't use it any more
+                                                    </li>
+                                                    <li>
+                                                        While Syntax is famiiar, it's less easy to read due to the way
+                                                        the for loops
+                                                        manage
+                                                        their
+                                                        conditions.
+                                                    </li>
+                                                </ul>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                <h5>While loop:</h5>
+                                                </p>
+                                                <p>
+                                                    <img class="img-code" src="assets/img/7.PNG">
+                                                </p>
+                                                <p>We have some differences:
+                                                <ul>
+                                                    <li>
+                                                        It is cleaner: The count is defined outside the loop, which
+                                                        makes easier to
+                                                        reason
+                                                        about.
+                                                    </li>
+                                                    <li>
+                                                        The terminal state (point in which our loop will exit) is very
+                                                        clear and
+                                                        emphatized.
+                                                        This will be very useful for us, when starting with the actual
+                                                        recursion
+                                                    </li>
+                                                </ul>
+                                                </p>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingThreeThree">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThreeThree"
+                                        aria-expanded="false" aria-controls="collapseThreeThree">
+                                        SIMPLE RECURSION:
+                                    </button>
+                                </h2>
+                                <div id="collapseThreeThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThreeThree" data-bs-parent="#accordionExampleSub2">
+                                    <div class="accordion-body">
+
+                                        <ol>
+                                            <li>
+                                                We saw in the last point the way in which a While loop iterates. From
+                                                this:
+                                            </li>
+                                            <li>
+                                                Let's think in the while loop. And let's think about ways we can iterate
+                                                without
+                                                looping.
+                                                The way to think about this is trying to <h5>reproduce the effect of a
+                                                    While
+                                                    loop
+                                                    but
+                                                    whitout a While loop.</h5>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    We have it here:
+                                                </p>
+                                                <img class="img-code" src="assets/img/8.PNG">
+                                            </li>
+                                            <li>
+                                                From here, we can see which are the elements of a recursive function:
+                                                <ol>
+                                                    <li>
+                                                        <h4>THE MOST IMPORTANT: a TERMINAL CONDITION. which is tested
+                                                            first of
+                                                            all
+                                                            in the
+                                                            function</h4>
+                                                        It is the if statement.
+                                                        <h5>There, we exit the function</h5>
+                                                        <p>
+                                                            Another example of TERMINAL CONDITION, more RIGHT AWAY (and
+                                                            clear):
+                                                        </p>
+                                                        <img class="img-code" src="assets/img/9.PNG">
+                                                    </li>
+                                                    <li>
+                                                        CJP: the second needed element is the modifier of the value
+                                                        which is
+                                                        tested
+                                                        in the
+                                                        TERMINAL CONDITION. -for not looping infinitely.
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>
+                                                The ADVANTAGES of using recursion are:
+                                                <ul>
+                                                    <li>
+                                                        Cleaner code, than a For or While loop
+                                                    </li>
+                                                    <li>
+                                                        Stateles operation: No change of the values of varibles along
+                                                        the way.
+                                                        No
+                                                        side
+                                                        effects: nothing outside of the function is changed.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                The DISADVANTAGES of using recursion are:
+                                                <ul>
+                                                    <li>
+                                                        May be confusing for people unfamiliar with the concept.
+                                                    </li>
+                                                    <li>
+                                                        <h2>ATTENTION: High memory use for deep recursion</h2>
+                                                        <h3>Needed to consider if Proper tail call optimization is
+                                                            supported by
+                                                            consumers of
+                                                            the app, and others, to decide to use or not RECURSION.</h3>
+                                                    </li>
+                                                    <li>
+                                                        The technique called "Proper tail calls" (are an options)
+                                                        demands for
+                                                        using
+                                                        it
+                                                        efectively to make recursion code a bit more complex.
+                                                    </li>
+                                                    <li>
+                                                        Proper tail call can be optimized. But it is not broadly
+                                                        supported.
+                                                    </li>
+                                                    <li>
+                                                        Proper tail call can be optimized in order to avoid the deep
+                                                        memory
+                                                        issues.
+                                                        But it
+                                                        is not broadly supported.
+                                                    </li>
+
+                                                </ul>
+                                                <ol>
+                                                    <li>
+                                                        <h4>Technique of Proper tail call:</h4>
+                                                        <p>See this code:</p>
+                                                        <img class="img-code" src="assets/img/10.PNG">
+                                                        <p>
+                                                            Here, differently than the previous code did, each return
+                                                            doesn't
+                                                            depend
+                                                            on any
+                                                            other further return of the function (as it was so in the
+                                                            previous
+                                                            code:
+                                                            "return
+                                                            (number, call());");
+                                                        </p>
+                                                        <p>
+                                                            That meant (previous code) that the stack kept each returned
+                                                            value
+                                                            for
+                                                            being
+                                                            able to do the inverse way once the end of recursion was
+                                                            reached:
+                                                            passing that
+                                                            last result returned to its call, then obtaining that call
+                                                            result
+                                                            and
+                                                            passing it
+                                                            at the time at the previos cull, and so on. All there calls
+                                                            are
+                                                            stored
+                                                            in the
+                                                            stack memory and it't the reason of the deep memory issue.
+                                                        </p>
+                                                        <p>
+                                                            Instead, with this last code, we have a "helper" function
+                                                            call
+                                                            facterIt(), which
+                                                            handles a param named accumulator that stores the values and
+                                                            they
+                                                            don't
+                                                            have to
+                                                            be stored in the stack.
+                                                        </p>
+                                                        <p>
+                                                            The Proper tail call technique consists on the recursive
+                                                            function
+                                                            can
+                                                            rewrite
+                                                            vaules to the last memory frame of the stack, and to do that
+                                                            you
+                                                            must
+                                                            ensure the
+                                                            recursive call itself is in the tail position of the
+                                                            fucntion (in
+                                                            the
+                                                            previous
+                                                            example, it wasn't, since the last position in the function
+                                                            were the
+                                                            calculation
+                                                            inside the return statement).
+                                                        </p>
+                                                        <p>
+                                                            Then, we can see that in the previous code the facturial()
+                                                            function
+                                                            is
+                                                            not
+                                                            implementing the proper tail call. It returns a factorial()
+                                                            recursive,
+                                                            but it is
+                                                            not being returned by itself but in the context of a
+                                                            calculation.
+                                                        </p>
+                                                        <p>
+                                                        <h3>CJP: Inconsistent info in this course about the support of
+                                                            the
+                                                            technique
+                                                            Proper
+                                                            tail optimization by the browsers and platforms (though it
+                                                            is
+                                                            supposed
+                                                            to be
+                                                            part of ES2015). Also, a seach in caniuse.com didn't find
+                                                            any result
+                                                            by
+                                                            "tail-call" and similars (2021-08-20). Also, it seems
+                                                            something
+                                                            TRIVIAL
+                                                            that any
+                                                            browser could support: it's just calling a function (helper)
+                                                            from
+                                                            another one
+                                                            (main). THen: </h3>
+                                                        <h2>¿?¿?</h2>
+                                                        </p>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="btn btn-primary accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    MODULE 3 - CURRYING
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExampleMain">
+                <div class="accordion-body">
+                    <div class="accordion accordion-flush" id="accordionExampleSub3">
+                        <ol>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingThreeOne">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThreeOne"
+                                        aria-expanded="false" aria-controls="collapseThreeOne">
+                                        CONCEPT:
+                                    </button>
+                                </h2>
+                                <div id="collapseThreeOne" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThreeOne" data-bs-parent="#collapseThree">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>
+                                                Currying is the way of consolidate the code of multiple functions that
+                                                may share
+                                                the
+                                                same code but
+                                                may take different args each one of their versions generated. GOOD FOR
+                                                MAINTAINABILITY, NOT HAVING TO CHANGE SEVERAL REPEATED CODE EACH TIME.
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    when you call afunction you have to pass ALL of their arguments. May
+                                                    be the same every time you call it, as for example in this code:
+                                                </p>
+                                                <img class="img-code" src="assets/img/11.PNG">
+                                                <p>
+                                                    We can factor out the "Hello" part from the function. Though this
+                                                    supposes some flexibility missing: the function just can say
+                                                    "Hello".
+                                                </p>
+
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    But VERSATILITY is what we pursuit when using functions. Then, we
+                                                    can create another functions:
+                                                </p>
+                                                <img class="img-code" src="assets/img/12.PNG">
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    This means many more funcitons to maintain. And, what if we want to
+                                                    add some testing to our code? We need to repeat it in every single
+                                                    function. A lot of extra-code and redundancy in our code. See:
+                                                </p>
+                                                <img class="img-code" src="assets/img/13.PNG">
+                                            </li>
+                                            <li>
+                                                <h2>Currying comes to the rescue:</h2> We can have:
+                                                <ol>
+                                                    <li>
+                                                        Multiple functions
+                                                    </li>
+                                                    <li>
+                                                        Simple arguments
+                                                    </li>
+                                                    <li>
+                                                        Customizable
+                                                    </li>
+                                                    <li>
+                                                        Shared code
+                                                    </li>
+                                                </ol>
+                                                <h4>We see how Next:</h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingThreeTwo">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThreeTwo"
+                                        aria-expanded="false" aria-controls="collapseThreeTwo">
+                                        MANUAL CURRYING:
+                                    </button>
+                                </h2>
+                                <div id="collapseThreeTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThreeTwo" data-bs-parent="#collapseThree">
+                                    <div class="accordion-body">
+                                        <ol>
+                                            <li>
+                                                <p>A simple curried funciton returns a <strong>function that is waiting
+                                                        for a
+                                                        missing argument</strong>:
+                                                </p>
+                                                <img class="img-code" src="assets/img/14.PNG">
+                                                <p>
+                                                    The return function has <strong>type testing</strong>. The curried
+                                                    function has a built-in type testing.
+                                                </p>
+                                                <p>
+                                                    All the point of the inner funciton is to return just greeting or
+                                                    name.
+                                                </p>
+                                                <p>
+                                                    MORE: The inner function has to be anonymous, in order to be able to
+                                                    receive its param. See the .js code, where the commented code in '//
+                                                    ********* Currying with inner function being not-anonymous function'
+                                                    would give the error 'iGreetSomehow is not a function', since this
+                                                    way of passing a function with a specific param needs an anoymous fn
+                                                    inside (a named fn could be used with callback()).
+                                                </p>
+                                                <p>
+                                                <h3>THE IMPORTANT THING:</h3>
+
+                                                <ul class="letters">
+                                                    <li>
+                                                        we have all of our tech checking in our greedCurried()
+                                                    </li>
+                                                    <li>
+                                                        In order to create a custom version greeHello(), we just have to
+                                                        <ol>
+                                                            <li>
+                                                                pass the string "Hello" to greedCurried()
+                                                            </li>
+                                                            <li>
+                                                                assign that to a new cosntant and that becomes the
+                                                                function that we execute with the name we want to send a
+                                                                greeting too.
+
+                                                            </li>
+                                                            <ul>
+                                                                <li>
+                                                                    This means: the <strong>custom function greeHello()
+                                                                        EMBRACES</strong> the common function
+                                                                    greedCurried(), by having it as argument and
+                                                                    <strong>adding a own 'custom' argument 'Hello' which
+                                                                        is catched <span class="upper-text">as param by
+                                                                            the anonymous function</span> in the
+                                                                        code</strong> -it comes outside of the EMBRACED
+                                                                    greedCurried(), thus the variable 'name' is not
+                                                                    defined inside it.
+                                                                </li>
+                                                                <li>
+                                                                    IF we just wanted to send to the function the value
+                                                                    'Hello', we wouldn't be seeing the value of Curring.
+                                                                </li>
+                                                                <li>
+                                                                    <p>
+                                                                        THE POINT IS: now, <strong>it's easy for us to
+                                                                            create a whole set of functions that will
+                                                                            share this code but each will prefer a set
+                                                                            of custom functionality</strong>. See:
+                                                                    </p>
+                                                                    <img class="img-code" src="assets/img/15.PNG">
+                                                                </li>
+                                                            </ul>
+                                                        </ol>
+                                                    </li>
+                                                    <li>
+                                                        As we saw in previous MODULE 1 > HiIGHER ORDER FUNCTIONS, and
+                                                        MODULE
+                                                        2 > RECURSION, Currying uses the ability of the HIGHER ORDER
+                                                        FUNCTIONS to return itself a function.
+                                                    </li>
+                                                </ul>
+
+                                                </p>
+                                                <p>
+                                                <h3>Here the code and Results:</h3>
+
+                                                <ul>
+                                                    <li>
+                                                        <h6>Call with both args:</h6>
+                                                        <span id="result-curriedFn1"></span>
+                                                    </li>
+                                                    <li>
+                                                        <h6>Call with just greeting arg:</h6>
+                                                        <span id="result-curriedFn2"></span>
+                                                    </li>
+                                                    <li>
+                                                        <h6>Call with just name arg:</h6>
+                                                        <span id="result-curriedFn3"></span>
+                                                    </li>
+                                                </ul>
+                                                </p>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingThreeTwo">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThreeThree"
+                                        aria-expanded="false" aria-controls="collapseThreeThree">
+                                        DEEP CURRYING:
+                                    </button>
+                                </h2>
+                                <div id="collapseThreeThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThreeThree" data-bs-parent="#collapseThree">
+                                    <div class="accordion-body">
+                                        <p> 
+                                            <h4>Deep currying, for variadic functions (functions with more than one argument we pass in)</h4>
+                                        </p>
+                                        <p>
+                                        <h4>What if we want to be able to customize any element of the greeting sentence? </h4>
+                                        </p>
+                                        <p>We would do that with typical JS this way:</p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/37.PNG">
+                                        </p>
+                                        <p>
+                                            How could you curry this?
+                                        </p>
+                                        <p>
+                                            [COMPLETAR]
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingThreeFour">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThreeFour"
+                                        aria-expanded="false" aria-controls="collapseThreeFour">
+                                        CURRYING AND PARTIAL APPLICATION:
+                                    </button>
+                                </h2>
+                                <div id="collapseThreeFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThreeFour" data-bs-parent="#collapseThree">
+                                    <div class="accordion-body">
+                                        [COMPLETE]
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="btn btn-primary accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    MODULE 4 - map(), reduce(), filter()
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#accordionExampleMain">
+                <div class="accordion-body">
+                    <div class="accordion accordion-flush">
+                        <ol>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingFourOne">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFourOne"
+                                        aria-expanded="false" aria-controls="collapseFourOne">
+                                        CONCEPT:
+                                    </button>
+                                </h2>
+                                <div id="collapseFourOne" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFourOne" data-bs-parent="#collapseFour">
+                                    <div class="accordion-body">
+                                        <ol>
+                                            <li>
+                                                The traditional JavaScript loops allow to browse an array and make
+                                                operations over each item.
+                                            </li>
+                                            <li>
+                                                THE PROBLEM:
+                                                <p>
+                                                <ul>
+                                                    <li>
+                                                        Unlike the Funcitonal paradigm, conditional-control loops,
+                                                        unlike filter() map() and reduce() methods, often alter
+                                                        variables outside of the loops, and also require variables
+                                                        inside of the loop to perform that function properly. These
+                                                        loops-functions by creating some state, define a condition for
+                                                        changing the state and terminate when that state is achieved.
+                                                    </li>
+                                                </ul>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>With ECMAS5 > alternatives to looping that are more functional and
+                                                cleaner: map() reduce() filter().
+                                            </p>
+                                            <p>
+                                                These methods operate over an array, and output a new set of values, KEEPING THE ORIGINAL ARRAY UNALTERED.
+                                            </p>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingFourTwo">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFourTwo"
+                                        aria-expanded="false" aria-controls="collapseFourTwo">
+                                        map():
+                                    </button>
+                                </h2>
+                                <div id="collapseFourTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFourTwo" data-bs-parent="#collapseFour">
+                                    <div class="accordion-body">
+
+                                        <h4>
+                                            Produces a new array with modified values from an existing
+                                            array (which keeps unmodified).
+                                        </h4>
+
+                                        <img class="img-code" src="assets/img/16.PNG">
+                                        <p>
+                                            We can also usea PURE function: pass a function as argument
+                                            where we return the operation with each item. The
+                                            getLength() function here is a pure function:
+                                        </p>
+                                        <img class="img-code" src="assets/img/16b.PNG">
+                                        <p>
+                                            IN FACT, A GOOD MAPING FUNCTION IS A PURE FUCNTION:
+                                        <ol>
+                                            <li>
+                                                it takes a single value of the type in the array being
+                                                mapped.
+                                            </li>
+                                            <li>
+                                                It operates on that value without creating side-effects.
+                                            </li>
+                                            <li>
+                                                it Always produces the same result from the same input
+                                                value.
+                                            </li>
+                                            <li>
+                                                it returns a value of the expected type in the new array
+                                                -because every element is the type the function returns.
+                                            </li>
+                                            <li>
+                                                Don't alter any variable outside of its own scope.
+                                            </li>
+                                            <li>
+                                                A NICE FEATURE: The pure function can be used without
+                                                modification in other contexts.
+                                            </li>
+                                            <li>
+                                                A LITTLE BIT TRICKIER: The term
+                                                '<strong>functor</strong>' is a Functional programming
+                                                term that some people throwm around, but the cool thing
+                                                is that
+                                                <ol>
+                                                    <li>
+                                                        it is simple element that holds a set of values
+                                                    </li>
+                                                    <li>
+                                                        it is simple element that holds a set of values
+                                                        and implements a map function to operate on each
+                                                        element
+                                                    </li>
+                                                    <li>
+                                                        Its map function return a functor of the same
+                                                        size
+                                                    </li>
+                                                    <li>
+                                                        As of ES5, the JS array is now officially a
+                                                        functor.
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingFourThree">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFourThree"
+                                        aria-expanded="false" aria-controls="collapseFourThree">
+                                        reduce():
+                                    </button>
+                                </h2>
+                                <div id="collapseFourThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFourThree" data-bs-parent="#collapseFour">
+                                    <div class="accordion-body">
+
+                                        <h4>
+                                            Produces a sumarized result across all of the values from an
+                                            array.
+                                        </h4>
+                                        <ol>
+                                            <li>
+                                                Operates on eacho itenm on the array
+                                            </li>
+                                            <li>
+                                                Maintains a running total
+                                            </li>
+                                            <li>
+                                                Optionally set an initial value and type for the running
+                                                total
+                                            </li>
+                                            <li>
+                                                Return a new value from the set of operations
+                                            </li>
+                                            <li>
+                                                Leave the original array unbchanged.
+                                            </li>
+                                            <li>
+                                                Don't alter state of anything outside the array being returned
+                                            </li>
+                                            <li>
+                                                Don't relay on states outside of the array being proccesed
+                                            </li>
+                                        </ol>
+                                        <p> It USES AN ANONYMOUS INLINE FUNCTION that counts with two
+                                            parameters:
+                                        </p>
+                                        <ul>
+                                            <li>
+                                                accumulator
+                                            </li>
+                                            <li>
+                                                item
+                                            </li>
+                                        </ul>
+                                        <img class="img-code" src="assets/img/17.PNG">
+                                        <p>
+                                            <strong>Optionally the anonymous function sets the initial value of
+                                                the accumulator</strong>, thanks to the JS feature of type
+                                            conversion and operator overload in JS. It's optional unless you
+                                            need to control the type or the value at the beginning of your
+                                            operation in order to ensure you get the result you where expecting.
+                                        </p>
+                                        <p>
+                                            IN MOST CASES, IT IS A GOOD IDEA TO SET IT. See:
+                                        </p>
+                                        <img class="img-code" src="assets/img/18.PNG">
+                                        <p>
+                                            The reason why the value got is "cat34" is the way JS overloads the addition
+                                            operator: accepts string and numbers, but if one of the value is a string,
+                                            the addition operator is going to treat the result as it is going to be a
+                                            string.
+                                        </p>
+                                        <p>
+                                            And in this case, as we didn't set an accumulator initial value, the
+                                            operator assumes the fiors value is going to be the fist one set for the
+                                            sum, and since the first value is 'cat' it assumes that the '+' operator
+                                            should be used to add together string values and to return a string.
+                                        </p>
+                                        <p>
+                                            The reduce function can be tricky to read.
+                                            <strong>For that reason our trick is putting out the PURE anonymous function
+                                                and giving it a name </strong>. Similarly to the case of map():
+                                        </p>
+                                        <img class="img-code" src="assets/img/19.PNG">
+                                        <p>
+                                            In Functional programming we find this trick of pulling out anonumous inline
+                                            functions, giving it a name, and making sure they are pure (as by testing
+                                            with different values as the previous example; this means sometimes to have
+                                            to specify the accumulator's init value), is part of what makes Functional
+                                            programming so much easy to read and to maintain.
+                                        </p>
+                                        <p>
+                                            In Functional programming we find this trick of pulling out anonumous inline
+                                            functions, giving it a name, and making sure they are pure (as by testing
+                                            with different values as the previous example; this means sometimes to have
+                                            to specify the accumulator's init value), is part of what makes Functional
+                                            programming so much easy to read and to maintain.
+                                        </p>
+                                        <p>reduce() SUM UP:</p>
+                                        <ol>
+                                            <li>
+                                                A good reduce() function is always pure.
+                                            </li>
+                                            <li>
+                                                It takes two arguments: accumulator, value
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingFourFour">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFourFour"
+                                        aria-expanded="false" aria-controls="collapseFourFour">
+                                        filter():
+                                    </button>
+                                </h2>
+                                <div id="collapseFourFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFourFour" data-bs-parent="#collapseFour">
+                                    <div class="accordion-body">
+                                        <h4>
+                                            Allows us to limit the set of elements in an array and
+                                            return a new subset of those elements in a new array.
+                                        </h4>
+                                        <P>
+                                            One of the problems of traditional loop for filtering:
+                                        </P>
+                                        <p>
+                                            <img class="img-code" src="assets/img/31.PNG">
+                                        </p>
+                                        <p>
+                                            The problem are the states handled: animalsLength variable,  threeLetterAnimals, count. The problem is that we dfon't either want the for loop at all.
+                                        </p>
+                                        <p>
+                                            With filter(), we can take a functions that returns a bool value as the condition:
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/32.PNG">
+                                        </p>
+                                        <p>Now, as done for map() and reduce(), we can make the same: we can <span class="upper-bold-text">pull out a name function from that anonymous fnction for making the code cleaner and easier to read</span>:</p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/33.PNG">
+                                        </p>
+                                        <p>
+                                            The type of functions that we are going to be able to pass to a filter() method are Pure functions
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingFourFive">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFourFive"
+                                        aria-expanded="false" aria-controls="collapseFourFive">
+                                        PERFORMANCE, AND HOW TO USE EFFECTIVELY, THESE METHODS:
+                                    </button>
+                                </h2>
+                                <div id="collapseFourFive" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFourFive" data-bs-parent="#collapseFour">
+                                    <div class="accordion-body">
+                                        <h4>
+                                            You probably have heard some performance concersn about these methods.
+                                            Loops currently perform much better in most browsers and in most JS engines in general. THese engines aren't optimized yet, to take advantage of these methods. 
+                                        </h4>
+                                        <p>
+                                            But still argue, that it's good to start using these methods today:
+                                            <ul>
+                                                <li>
+                                                    New engines will improve with these methods in mind
+                                                </li>
+                                                <li>
+                                                    Your bottleneck is almost never in the loop, in JS
+                                                </li>
+                                                <li>
+                                                    Write for cleanliness, readability, and maintainability
+                                                </li>
+                                                <li>
+                                                    Optimize for performance only if real-world situations call for it: looking to stadistics, i.e, "yes, my code has a bottleneck, and it is in the loop". There you can skip it out in your backup store 
+                                                </li>
+                                            </ul>
+                                        </p>
+                                        <p>
+                                            <h4>What if we need to use these two methods together?</h4>
+                                        </p>
+                                        <p>
+                                            Example: StudlyCapped string of three-letter words from an array:
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/34.PNG">
+                                        </p>
+                                        <p>
+                                            We have typical inconvenients of traditional loop. FOr doing it in Functional programming:
+                                        </p>
+                                        <p>
+                                            <ul>
+                                                <li>
+                                                    Extract the if condiiton, to a function
+                                                </li>
+                                                <li>
+                                                    Extract the .char(0).toUpper.... to a function
+                                                </li>
+                                                <li>
+                                                    Extract the .join() to a functional method
+                                                </li>
+                                            </ul>
+                                        </p>
+                                        <p>
+                                            Result:
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/35.PNG">
+                                        </p>
+                                        <p>
+                                            It is a lot cleaner, and easier to maintain.
+                                        </p>
+                                        <p>
+                                            But still, we have a lot of vars created inside the function. Though they can't pollute outside, it is possible to do it better: with <span class="upper-bold-text">chaining </span> the methods:
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/36.PNG">                                      
+                                        </p>
+                                        <p>
+                                            <span class="upper-bold-text">The value is not so much changing or introducing new funcitonality, but cleaner and more maintainable code. And the versatile enough, the chaining, the use of intermediate functions.  The key is to be able to use these methods the best for your advantage.  </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="btn btn-primary accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    MODULE 5 - COMPOSITION
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExampleMain">
+                <div class="accordion-body">
+                    <div class="accordion accordion-flush">
+                        <ol>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingFiveOne">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFiveOne"
+                                        aria-expanded="false" aria-controls="collapseFiveOne">
+                                        CONCEPT:
+                                    </button>
+                                </h2>
+                                <div id="collapseFiveOne" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFiveOne" data-bs-parent="#collapseFive">
+                                    <div class="accordion-body">
+                                        <ol>
+                                            <li>
+                                                Takes to the next level, and looks how you can build up new
+                                                functionality yusing small pieces of existing functionallity.
+                                            </li>
+                                            <li>
+                                                In order to do that, you are going to want to nest your functions, which
+                                                is something JS allows you to do. In fact, it has been hitten in some
+                                                examples you have already seen.
+                                            </li>
+                                            <li>
+                                                we know JS allow us to use functions that call to functions. High-order
+                                                functions can take a function as an argument, or return a function.
+                                            </li>
+                                            <li>
+                                                Function methods can also be changed. You can take a serie of pure
+                                                functions that return a value, and each of them can perform its function
+                                                independently, and passes a return value to the next one. So the
+                                                sequence of functions can be called all in a single line.
+                                            </li>
+                                            <li>
+                                                <p>But in addition, JS allows you to pass functions to other functions
+                                                    <strong>using nested parenthesis</strong>, and when a function
+                                                    followed by parenthesis is being passed to another function, it's
+                                                    not passed as the funciton, but rather value of performing that
+                                                    function:
+                                                </p>
+                                                <p>
+                                                    <img class="img-code" src="assets/img/20.PNG">
+                                                </p>
+                                                <p>
+                                                    To notice about is the order of operations: timesTwo(3) returns 6,
+                                                    and then adds 1, and produces 7. When you are reading a function
+                                                    that is nested inside of another function, you should read the
+                                                    function called in the inner parentheses as if it where just the
+                                                    return value, of what you would get if you run that function
+                                                    independently.
+                                                </p>
+                                                <p>
+                                                    Even in the simplest extreme, the order of the nesting matters:
+                                                </p>
+                                                <p>
+                                                    <img class="img-code" src="assets/img/21.PNG">
+                                                </p>
+                                                <p>
+                                                    Having switched the order, the result is different. <strong> ORDER
+                                                        MATTERS, is the most important point in Composition.</strong>
+                                                </p>
+                                                <p>
+                                                    NESTING HAVE NO LIMITS IN JS. What we have done here is essentially
+                                                    compose new functionality within JS by nesting existing functions.
+                                                    We can go as fas as we want, following a set of RULES FOR
+                                                    COMPOSITION:
+                                                </p>
+                                                <ol>
+                                                    <li>
+                                                        Each nested function, small and pure.
+                                                    </li>
+                                                    <li>
+                                                        Make sure they pass the returned values
+                                                    </li>
+                                                    <li>
+                                                        Make sure that respect the ordfer in which operations are going
+                                                        to be performed.
+                                                    </li>
+                                                </ol>
+                                                <p>EXAMPLE:</p>
+                                                <p>
+                                                    <img class="img-code" src="assets/img/22.PNG">
+                                                </p>
+                                                <p>
+                                                    WHERE DOES THAT GET US? , in a Functional programming paradigm, in
+                                                    order to make JS code a little bit cleaner, mey be get rid of some
+                                                    of those extra parenthesis.
+                                                </p>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingFiveTwo">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFiveTwo"
+                                        aria-expanded="false" aria-controls="collapseFiveTwo">
+                                        MANUAL COMPOSITON:
+                                    </button>
+                                </h2>
+                                <div id="collapseFiveTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFiveTwo" data-bs-parent="#collapseFive">
+                                    <div class="accordion-body">
+                                        <p>
+                                            It is nesting versions of existing functions, for defining new functions.
+                                        </p>
+                                        <p>
+                                            So you can define a new function, that behaves like a set of nested
+                                            functions, using smaller pure functions as components.
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/24.PNG">
+                                        </p>
+                                        <p>
+                                            This way, we have made composition avoiding a lot of extra parenthesis. But,
+                                            <strong> have created a state variable, and we don'0 want that in Funcitonal
+                                                programming</strong>. Lets fugire out if we can eliminate that
+                                            intermediate variable: let's use nesting instead:
+                                        </p>
+                                        <p>
+                                            The solution is <strong> Compose function (not currently native to
+                                                JS)</strong>(not currently native to JS) that would take two functions
+                                            and nest them, producing a new function.
+                                        </p>
+                                        <p>
+                                            This new function will be the result of applying the compose() function and
+                                            then passing in the first function and the second function:
+                                        </p>
+                                        <p>
+                                            compose(firstFunction,secondFunction);
+                                        </p>
+                                        <p>
+                                            The tricky part is the order in which the operations will be perform, which
+                                            in nested functions is a very critical aspect.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFiveThree"
+                                        aria-expanded="false" aria-controls="collapseFiveThree">
+                                        SIMPLE COMPOSE UTILITY:
+                                    </button>
+                                </h2>
+                                <div id="collapseFiveThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFiveThree" data-bs-parent="#collapseFive">
+                                    <div class="accordion-body">
+                                        <p>
+                                            We need to take two fnctions as arguments, and return a composed function
+                                            that nests them, which is able to take a value that can pass in.
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/25.PNG">
+                                        </p>
+                                        <p>
+                                            We admit some decisions, we decided the 2nd passed function is the first
+                                            that performs an operation in the value. This is the common practice in
+                                            Functional programming, ths 2nd passed is the nested, first in operate
+                                            [SINCE IT IS MORE CRITICAL TO CHANGE -NO ENTENDIDO BIEN, REVISAR].
+                                        </p>
+                                        <p>
+                                            Let's test our compose function:
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/26.PNG">
+                                        </p>
+                                        <p>
+                                            Then we see how easy having a compose function makes it to combine those
+                                            nested functions and quickly create variations. In fact, we can create a lot
+                                            of variations using just one line for each one, without reading a lot of
+                                            redundant code:
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/27.PNG">
+                                        </p>
+                                        <ol>
+                                            Things to keep in mind when you are composing:
+                                            <li>
+                                                Order matters
+                                            </li>
+                                            <li>
+                                                Keep track of the return types
+                                            </li>
+                                            <li>
+                                                Don't try to compose impure functions
+                                            </li>
+                                            <li>
+                                                Who needs to understand your code
+                                            </li>
+                                            <li>
+                                                You may want to use a library, in order to bring a pro-boosted well
+                                                maintained composed functions
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <h2 class="accordion-header" id="headingFiveFour">
+                                    <button class="btn btn-primary accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFiveFour"
+                                        aria-expanded="false" aria-controls="collapseFiveFour">
+                                        COMPOSING WITH A LIBRARY:
+                                    </button>
+                                </h2>
+                                <div id="collapseFiveFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFiveFour" data-bs-parent="#collapseFive">
+                                    <div class="accordion-body">
+                                        <p>
+                                            It rest some problems to the simple compose we created:
+                                        <ol>
+                                            <li>
+                                                <p>It dsoesn't handle nested functions that take multiple arguments. And
+                                                    the ability for variatic functions is an important aspect. Let's
+                                                    demonstrate it:
+                                                </p>
+                                                <p>
+                                                    <img class="img-code" src="assets/img/28.PNG">
+                                                </p>
+                                                <p>
+                                                    the function divide() takes 2 args. Since we are starting with
+                                                    divide() , we need to pass two values: 4, 2. But we get NaN
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    It doesnt't handle more than two arguments:
+                                                </p>
+                                                <p>
+                                                    <img class="img-code" src="assets/img/29.PNG">
+                                                </p>
+                                                <p>
+                                                    JS ignores the last function addOne.
+                                                </p>
+                                                <p>
+                                                    Other problems
+                                                </p>
+
+                                            </li>
+                                        </ol>
+                                        <p>
+                                            Then, knowing how compose works, it's good to <strong> a Functional
+                                                prograaming library</strong> that includes a robust compose method that
+                                            you are comfortable working with.
+                                        </p>
+                                        <p>
+                                            For example, this is the compose() method of the library Underscore
+                                        </p>
+                                        <p>
+                                            <img class="img-code" src="assets/img/30.PNG">
+                                        </p>
+                                        <p>Other libraries are:</p>
+                                        <ul>
+                                            <li>
+                                                Ramda
+                                            </li>
+                                            <li>
+                                                Underscore
+                                            </li>
+                                            <li>
+                                                Lodash
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            Just consider:
+                                        <ol>
+                                            <li>
+                                                Size
+                                            </li>
+                                            <li>
+                                                Support
+                                            </li>
+                                            <li>
+                                                How other methods behave inside the library.
+                                            </li>
+                                        </ol>
+                                        </p>
+                                        <p>
+                                            And ultimately, <span class="bold-text"> once you have understood how Functional programming works, and you know which utility method you want, </span><span class="upper-bold-text">choosing a library is the best path to follow</span>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/index.js"></script>
+    <script src="assets/lib/bootstrap5/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
