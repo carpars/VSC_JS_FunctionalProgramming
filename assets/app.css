@@ -31,3 +31,9 @@ ul.letters {
 .bold-text {
     font-weight: 900;
 }
+
+#title-header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
