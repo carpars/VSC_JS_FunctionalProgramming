@@ -102,3 +102,100 @@
       // 1. var iMakeMyGreetToGeneric = greetCurriedClosure("Hii there..");
       // 2. console.log(iMakeMyGreetToGeneric());  -parameterless call
     };
+
+
+    document.addEventListener("DOMContentLoaded", function(ev) {
+      setTimeout(function(){
+          let element = document.querySelector("body > h2");
+          element.classList.add("show");
+      }, 4000);
+    });
+
+
+
+// REMOVE, JUST FOR TESTING:
+let elementAccordion1 = document.getElementById("collapseExampleOne");
+elementAccordion1.addEventListener("show.bs.collapse", function(ev) {
+  console.log("show 1");
+});
+// function(ev){
+//   console.log("DOM");
+// });
+
+// $(document).on('DOMContentLoaded', function(ev){
+//     alert("DOM");
+// });
+
+
+
+// $("[class='collapse']").on("shown.bs.collapse", function(ev) {
+//     console.log("er");    
+// });
+
+// $("[class='collapse']").on("hide.collapse", function(ev) {
+//     console.log("er");
+// });
+
+// $("[class='collapse']").on("hidden.collapse", function(ev) {
+//     console.log("er");
+// });
+
+// window.addEventListener("beforeunload", function(ev) {
+//   ev.preventDefault();  
+//   return ev.returnValue = "Sure???";
+// });
+
+// (async function() {
+  window.addEventListener("beforeunload", function(ev){
+      ev.preventDefault();
+      // TODO: accompaign with a div showing some save-error text
+      saveChanges() == false ? ev.returnValue = '' : null;
+  });
+// });
+// })();
+function saveChanges() {
+  return true;
+}
+
+function saveChanges2() {
+    let ajaxSavedGotResult = false;
+    // This setTimeout() simulates the ajax call time taken
+    setTimeout(function(){
+        if (ajaxSavedGotResult) {
+         return true;
+        }
+        else  {
+          return false;
+        } 
+    }, 3000); 
+}      
+
+
+
+// function saveChanges(){
+
+//   console.log("Enters saveCh");
+//   let promiseSaveChanges = new Promise(function(myResolve,myReject) {
+//     let ajaxSavedGotResult = false;
+//     myResolve(ajaxSavedGotResult);
+//     myReject("ERROR");
+//     setTimeout(myResolve, 3000);
+//   });  
+//   promiseSaveChanges.then(
+//     function(data){ alert("resultado promesa: " + data); return data;},
+//     function(error) {alert(error); return false; }
+//   );
+// }
+async function onShow(){
+  console.log("df");
+}
+
+
+
+document.addEventListener("load", function(ev) {
+  alert(confirm());
+});
+
+window.onload = function(ev) {
+  console.log("dasd");
+};

@@ -2,6 +2,19 @@
     margin: 2rem !important;    
 } */
 
+body > h2 {
+    
+        display: none !important;
+        opacity: 0 !important;        
+        transition: opacity 3s ease-in-out !important;                
+}
+
+body > h2.show {
+    display: block !important;
+    opacity: 1 !important;    
+    transition: opacity 3s ease-in-out !important;
+}
+
 body .page-header {
     padding-left: 0.7rem !important;
 }
